@@ -10,9 +10,10 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
+  /* modification de la next card pour que l'index soit à jour et ajout du modulo % pour un retour a zero du slider */
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc.length ? index + 1 : 0),
+      () => setIndex((index+1)% byDateDesc.length),
       5000
     );
   };
@@ -42,7 +43,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${event.id}`}
+                  key={`${event.id}`} /* modification de la key */
                   type="radio"
                   name="radio-button"
                   checked={idx === radioIdx}
