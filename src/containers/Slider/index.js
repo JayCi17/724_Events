@@ -43,7 +43,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${event.id}`} /* modification de la key */
+                  key={event.id} /* modification de la key */
                   type="radio"
                   name="radio-button"
                   checked={idx === radioIdx}
