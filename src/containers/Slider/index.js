@@ -49,7 +49,7 @@ const Slider = () => {
                   key={`${byDateDesc[radioIdx].title}}`} /* modification de la key */
                   type="radio"
                   name="radio-button"
-                  checked={idx === radioIdx}
+                  checked={index === radioIdx}/* si index strictement egal a radioIdx le bullet point checked change de place */
                   readOnly
                 />
               ))}
