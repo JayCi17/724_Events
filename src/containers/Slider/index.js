@@ -12,6 +12,7 @@ const Slider = () => {
   );
   /* modification de la next card pour que l'index soit à jour et ajout du modulo % pour un retour a zero du slider */
   const nextCard = () => {
+    /* ajout d'une condition pour eviter les erruers de key */ 
     if(data){
     setTimeout(
       () => setIndex((index+1)% byDateDesc.length),
