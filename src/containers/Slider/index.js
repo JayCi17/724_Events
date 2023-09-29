@@ -15,7 +15,7 @@ const Slider = () => {
     /* ajout d'une condition pour eviter les erruers de key */ 
     if(data){
     setTimeout(
-      () => setIndex((index+1)% byDateDesc.length),
+      () => setIndex(index < byDateDesc.length - 1 ? index +1 : 0 ),
       5000
     );
     }
