@@ -15,7 +15,8 @@ const Form = ({ onSuccess, onError }) => {
       // We try to call mockContactApi
       try {
         await mockContactApi();
-        setSending(false);
+        setSending(sending);/* modification de la valeur false à sending */
+        onSuccess();
       } catch (err) {
         setSending(false);
         onError(err);
@@ -37,7 +38,8 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
           />
           <Field placeholder="" label="Email" />
-          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
+          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}
+          title={sending ? "En cours" : "Envoyer"}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
         </div>
@@ -50,7 +52,7 @@ const Form = ({ onSuccess, onError }) => {
         </div>
       </div>
     </form>
-  );
+  );/* ajout du title dans le Button */
 };
 
 Form.propTypes = {
