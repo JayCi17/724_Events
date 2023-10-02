@@ -52,3 +52,13 @@ body {
   margin-top: 64px;
   margin-bottom: 64px;
 }
+
+
+@media (max-width:760px){
+  .ListContainer{
+    width:20%;
+    flex-direction: column;
+    margin-top:32px;
+    margin-bottom:32px;
+  }
+}
